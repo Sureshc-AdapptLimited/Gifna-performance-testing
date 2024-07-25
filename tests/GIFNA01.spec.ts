@@ -151,7 +151,7 @@ import { config } from "../utils/config";
 //     await expect(page.getByText("Donors.")).toBeVisible();
 //   });
 // });
-test.describe("With Login", () => {
+test.describe("Test Suite", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/login");
     // await page.waitForLoadState("networkidle");
@@ -298,7 +298,7 @@ test.describe("With Login", () => {
     await page.goto("/about-us");
     await page.waitForLoadState("networkidle");
     await expect(
-      page.getByRole("heading", { name: "About GIFNA", exact: true })
+      page.getByRole("heading", { name: "About GIFNA " })
     ).toBeVisible();
     await expect(
       page.getByText(
@@ -665,4 +665,45 @@ test.describe("With Login", () => {
     await expect(page.getByText("Drafts")).toBeVisible();
     await expect(page.getByText("Published contents")).toBeVisible();
   });
+
+  test("Scorecard - Create scorecard", async ({ page }) => {
+    await page.goto("/admin/scorecards/create");
+    await page.waitForLoadState("networkidle");
+    await expect(
+      page.getByRole('heading', { name: 'Enter Scorecard ' })
+    ).toBeVisible();
+    await expect(page.getByText('Home Scorecard Enter scorecard')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'Enter the information for' })
+    ).toBeVisible();
+    await expect(page.getByText('Score Card Title *')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Save' })).toBeVisible();
+  });
+  test("Scorecard - Score topics", async ({ page }) => {
+    await page.goto("/admin/scorecards/scoretopic");
+    await page.waitForLoadState("networkidle");
+    await expect(page.getByRole('heading', { name: 'Scorecard ' })).toBeVisible();
+    await expect(page.getByText('Description')).toBeVisible();
+    await expect(page.getByText('Home Scorecard Score Topics')).toBeVisible();
+    await expect(page.getByText('Scorecard *')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Topics  ' })).toBeVisible();
+    await expect(page.getByPlaceholder('Search')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Search' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Save' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Export' })).toBeVisible();
+  });
+
+  test("Scorecard - Scorecard list", async ({ page }) => {
+    await page.goto("/admin/scorecards");
+    await page.waitForLoadState("networkidle");
+    await expect(page.getByRole('heading', { name: 'Scorecard List ' })).toBeVisible();
+    await expect(page.getByText('Home Scorecard Scorecard list')).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Scorecard' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Country table' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Created on' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Updated on' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Status' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Delete' })).toBeVisible();
+  });
+
 });

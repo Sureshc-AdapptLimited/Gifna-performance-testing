@@ -1,0 +1,153 @@
+{
+    
+    "pages": [
+        {
+            "name": "Home",
+            "url": "/",
+            "get_text":[
+                "The Global database on the Implementation of Food and Nutrition Action (GIFNA) is an interactive platform for sharing standardized information on food and nutrition policies and actions,",
+                "Features",
+                "Nutritional Info"
+            ]
+        },
+        {
+            "name": "Map",
+            "url": "/map",
+            "get_text":[
+                "Map.",
+                "Use the filters below to",
+                "*Type: A = Programmes and"
+            ],
+            "get_role":{
+                "heading":[
+                    { "name": "Filter by time period of" }
+                ]
+            }
+        },
+        {
+            "name": "Scorecards and data summaries",
+            "url": "/summaries",
+            "get_text":[
+                "Scorecards and data summaries present data in GIFNA in maps and data tables for",
+                "Country score cards:",
+                "Data summaries:",
+                "Nutrition policies",
+                "Healthy food and food"
+            ],
+            "get_role":{
+                "heading":[
+                    { "name": "Scorecards and data summaries" }
+                ]
+            }
+        },
+        {
+            "name": "Scorecards and data summaries - TFA Country Score Card",
+            "url": "/summary/TFA",
+            "get_text":[
+                "More than half of the world",
+                "Export Map 1. National policy"
+            ],
+            "get_role":{
+                "heading":[
+                    { "name": "TFA Country Score Card" }
+                ]
+            }
+        },
+        {
+            "name": "Scorecards and data summaries - Sodium Country Score Card",
+            "url": "/summary/sodium",
+            "get_text":[
+                "More than a quarter of the",
+                "Export Map 1. National policy"
+            ],
+            "get_role":{
+                "heading":[
+                    { "name": "Sodium Country Score Card" }
+                ]
+            }
+        },
+        {
+            "name": "Scorecards and data summaries - Sugars Country Score Card",
+            "url": "/summary/sugars",
+            "get_text":[
+                "More than a fifth of the",
+                "Export Map 1. National policy"
+            ],
+            "get_role":{
+                "heading":[
+                    { "name": "Sugars Country Score Card" }
+                ]
+            }
+        },
+        {
+            "name": "Countries",
+            "url": "/countries",
+            "get_text":[
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ WHO member states Areas and territories A",
+                "Download:"
+            ],
+            "get_placeholder":[
+                "Type a country"
+            ],
+            "get_role":{
+                "button":[
+                    { "name": "By country" },
+                    { "name": "By WHO region" }
+                ]
+            }
+        },
+        {
+            "name": "Search",
+            "url": "/search",
+            "get_text":[
+                "Use the filters to narrow",
+                "Search result -",
+                "Search history :-",
+                "Download:",
+                "*Type: A = Programmes and",
+                "Data type",
+                "Regions",
+                "Filter by topics",
+                "Advanced filters"
+            ],
+            "get_role":{
+                "heading":[
+                    { "name": "Search", "exact": true },
+                    { "name": "Search filters" }
+                ],
+                "columnheader":[
+                    { "name": "WHO region" },
+                    { "name": "Country" },
+                    { "name": "Title" },
+                    { "name": "Type" },
+                    { "name": "Start year" }
+                ]
+            },
+            "locator": {
+                "#accordion4Example": [
+                    { "name": "Countries", "exact": true }
+                ]
+            }
+        },
+        {
+            "name": "About GIFNA",
+            "url": "/about-us",
+            "get_text":[
+                "WHO Department of Nutrition and Food Safety (NFS) is committed to supporting",
+                "WHO resources",
+                "Partners and data sources",
+                "Donors."
+            ],
+            "get_role":{
+                "heading":[
+                    { "name": "About GIFNA", "exact": true },
+                    { "name": "Purpose" },
+                    { "name": "Data", "exact": true },
+                    { "name": "Data sources" },
+                    { "name": "History" },
+                    { "name": "Acknowledgments" }
+                ]
+            }
+        }
+    ]
+}
