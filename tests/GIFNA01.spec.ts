@@ -152,29 +152,29 @@ import { config } from "../utils/config";
 //   });
 // });
 test.describe("Test Suite", () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto("/login");
-    // await page.waitForLoadState("networkidle");
-    // await page
-    //   .locator("#navbarNavDropdown")
-    //   .getByRole("button", { name: "Log in" })
-    //   .click();
-    // await page.waitForLoadState("networkidle");
-    await page.click('[data-cy="SignUpPageLogin"]');
-    await page.waitForLoadState("networkidle");
-    await page.fill('[name="loginfmt"]', config.username);
-    await page.click('[value="Next"]');
-    await page.waitForLoadState("networkidle");
-    await page.fill('[name="passwd"]', config.password);
-    await page.click('[value="Sign in"]');
-    await page.waitForLoadState("networkidle");
-    await page.click('[value="Yes"]');
-    await page.waitForLoadState("networkidle");
-  });
+  // test.beforeEach(async ({ page }) => {
+  //   await page.goto("/login");
+  //   // await page.waitForLoadState("networkidle");
+  //   // await page
+  //   //   .locator("#navbarNavDropdown")
+  //   //   .getByRole("button", { name: "Log in" })
+  //   //   .click();
+  //   // await page.waitForLoadState("networkidle");
+  //   await page.click('[data-cy="SignUpPageLogin"]');
+  //   await page.waitForLoadState("networkidle");
+  //   await page.fill('[name="loginfmt"]', config.username);
+  //   await page.click('[value="Next"]');
+  //   await page.waitForLoadState("networkidle");
+  //   await page.fill('[name="passwd"]', config.password);
+  //   await page.click('[value="Sign in"]');
+  //   await page.waitForLoadState("networkidle");
+  //   await page.click('[value="Yes"]');
+  //   await page.waitForLoadState("networkidle");
+  // });
 
   test("Home", async ({ page }) => {
     await page.goto("/");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByText(
         "The Global database on the Implementation of Food and Nutrition Action (GIFNA) is an interactive platform for sharing standardized information on food and nutrition policies and actions,"
@@ -185,8 +185,8 @@ test.describe("Test Suite", () => {
   });
   test("Map", async ({ page }) => {
     await page.goto("/map");
-    await page.waitForLoadState("networkidle");
-    await expect(page.getByText("Map.")).toBeVisible();
+    // await page.waitForLoadState("networkidle");
+    await expect(page.getByRole('heading', { name: 'Map. ' })).toBeVisible();
     await expect(page.getByText("Use the filters below to")).toBeVisible();
     // await page.waitForLoadState("networkidle");
     await expect(
@@ -196,7 +196,7 @@ test.describe("Test Suite", () => {
   });
   test("Scorecards and data summaries", async ({ page }) => {
     await page.goto("/summaries");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Scorecards and data summaries" })
     ).toBeVisible();
@@ -212,7 +212,7 @@ test.describe("Test Suite", () => {
   });
   test("TFA Country Score Card", async ({ page }) => {
     await page.goto("/summary/TFA");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "TFA Country Score Card" })
     ).toBeVisible();
@@ -221,7 +221,7 @@ test.describe("Test Suite", () => {
   });
   test("Sodium Country Score Card", async ({ page }) => {
     await page.goto("/summary/sodium");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Sodium Country Score Card" })
     ).toBeVisible();
@@ -230,7 +230,7 @@ test.describe("Test Suite", () => {
   });
   test("Sugars Country Score Card", async ({ page }) => {
     await page.goto("/summary/sugars");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Sugars Country Score Card" })
     ).toBeVisible();
@@ -239,7 +239,7 @@ test.describe("Test Suite", () => {
   });
   test("Countries", async ({ page }) => {
     await page.goto("/countries");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Countries" })
     ).toBeVisible();
@@ -259,7 +259,7 @@ test.describe("Test Suite", () => {
   });
   test("Search", async ({ page }) => {
     await page.goto("/search");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Search", exact: true })
     ).toBeVisible();
@@ -296,7 +296,7 @@ test.describe("Test Suite", () => {
   });
   test("About GIFNA", async ({ page }) => {
     await page.goto("/about-us");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "About GIFNA " })
     ).toBeVisible();
@@ -323,7 +323,7 @@ test.describe("Test Suite", () => {
 
   test("Dashboard", async ({ page }) => {
     await page.goto("/admin/dashboard");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Dashboard " })
     ).toBeVisible();
@@ -342,7 +342,7 @@ test.describe("Test Suite", () => {
   });
   test("Profile", async ({ page }) => {
     await page.goto("/admin/profile");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "User Profile " })
     ).toBeVisible();
@@ -374,7 +374,7 @@ test.describe("Test Suite", () => {
   });
   test("Indicator - Indicator value", async ({ page }) => {
     await page.goto("/admin/mapindicator");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Map Indicator Options" })
     ).toBeVisible();
@@ -406,7 +406,7 @@ test.describe("Test Suite", () => {
   });
   test("Taxonomies", async ({ page }) => {
     await page.goto("/admin/taxonomies");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Taxonomies " })
     ).toBeVisible();
@@ -424,7 +424,7 @@ test.describe("Test Suite", () => {
   });
   test("Bulk Import & Export", async ({ page }) => {
     await page.goto("/admin/bulkimportexport");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Bulk Import & Export " })
     ).toBeVisible();
@@ -448,7 +448,7 @@ test.describe("Test Suite", () => {
   });
   test("Compose Email", async ({ page }) => {
     await page.goto("/admin/composeemail");
-    await page.waitForLoadState("networkidle");
+    // await page.waitForLoadState("networkidle");
     await expect(
       page.getByRole("heading", { name: "Compose email " })
     ).toBeVisible();
